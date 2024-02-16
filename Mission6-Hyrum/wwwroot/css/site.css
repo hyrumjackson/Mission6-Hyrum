@@ -1,0 +1,61 @@
+/* Base settings */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern font family */
+    background-color: #f4f4f4; /* Light background color for contrast */
+    color: #333; /* Darker text for readability */
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 1rem; /* Adds some spacing around main content */
+}
+
+footer {
+    flex-shrink: 0;
+    padding: 20px 0;
+    background-color: #222; /* Dark footer background */
+    color: #fff; /* Light footer text */
+    text-align: center;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300; /* Lighter font weights for headings */
+}
+
+p {
+    line-height: 1.6; /* Increased line-height for better readability */
+}
+
+/* Link styles */
+a {
+    color: #007bff; /* Bootstrap's default blue for consistency */
+    text-decoration: none; /* Removes underlines from links */
+}
+
+    a:hover {
+        text-decoration: underline; /* Underline on hover for discoverability */
+    }
+
+/* Button and form enhancements */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Slightly larger and softer focus ring */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px; /* Slightly larger font for larger screens */
+    }
+}
