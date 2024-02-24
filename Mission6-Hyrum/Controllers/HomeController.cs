@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission6_Hyrum.Models;
 
 namespace Mission6_Hyrum.Controllers
@@ -77,7 +78,9 @@ namespace Mission6_Hyrum.Controllers
         public IActionResult Movies()
         {
             var movies = _context.Movies
-                .OrderByDescending(x => x.Year).ToList();
+                .Include(m => m.Category)
+                .OrderByDescending(x => x.Year)
+                .ToList();
 
             return View(movies);
         }
@@ -87,6 +90,10 @@ namespace Mission6_Hyrum.Controllers
         {
             var recordToEdit = _context.Movies
                 .Single(x => x.MovieId == id);
+
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
 
             return View("AddMovie", recordToEdit);
         }

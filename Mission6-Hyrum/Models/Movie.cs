@@ -8,11 +8,10 @@ namespace Mission6_Hyrum.Models
         [Key]
         public int MovieId { get; set; }
 
-        [Required(ErrorMessage = "Please select a category.")]
-        public int CategoryId { get; set; }
-
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public int? CategoryId { get; set; }
+
+        public Category? Category { get; set; }
 
         [Required(ErrorMessage = "Please enter the movie title.")]
         public string Title { get; set; }
@@ -26,12 +25,12 @@ namespace Mission6_Hyrum.Models
         public string? Rating { get; set; }
 
         [Required(ErrorMessage = "Please specify if the movie has been edited.")]
-        public bool Edited { get; set; }
+        public bool? Edited { get; set; }
 
         public string? LentTo { get; set; }
 
         [Required(ErrorMessage = "Please specify if the movie is copied to Plex.")]
-        public bool CopiedToPlex { get; set; }
+        public bool? CopiedToPlex { get; set; }
 
         [MaxLength(25, ErrorMessage = "Notes can't be more than 25 characters.")]
         public string? Notes { get; set; }

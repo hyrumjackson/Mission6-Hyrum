@@ -11,8 +11,10 @@
             <td>Year</td>
             <td>Director</td>
             <td>Rating</td>
+            <td>Category</td>
             <td>Edited</td>
             <td>Lent to</td>
+            <td>Copied To Plex</td>
             <td>Notes</td>
             <td></td>
             <td></td>
@@ -27,8 +29,10 @@
                 <td>@x.Year</td>
                 <td>@x.Director</td>
                 <td>@x.Rating</td>
+                <td>@x.Category.CategoryName</td>
                 <td>@x.Edited</td>
                 <td>@x.LentTo</td>
+                <td>@x.CopiedToPlex</td>
                 <td>@x.Notes</td>
 
                 <td><a class="btn btn-light" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
